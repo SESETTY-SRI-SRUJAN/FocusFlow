@@ -1,0 +1,183 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Sidebar */
+
+.sidebar{
+    width:250px;
+    background:#111827;
+    padding:30px 20px;
+}
+
+.logo{
+    margin-bottom:40px;
+    font-size:28px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin:30px 0px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.sidebar li:hover{
+    color:#38bdf8;
+}
+
+/* Main Content */
+
+.main-content{
+    flex:1;
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+}
+
+/* Header */
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+#theme-toggle{
+    padding:10px 18px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+/* Stats */
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.08);
+    padding:25px;
+    border-radius:20px;
+    backdrop-filter:blur(10px);
+}
+
+/* Timer */
+
+.timer{
+    font-size:60px;
+    font-weight: 600;
+    text-align:center;
+    margin:30px 0;
+    font-weight:700;
+    letter-spacing:3px;
+}
+
+.timer-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.timer-buttons button{
+    padding:12px 22px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* Goals */
+
+.goals-section input{
+    width:100%;
+    padding:12px;
+    margin:20px 0;
+    border:none;
+    border-radius:10px;
+}
+
+.goals-section button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    margin-bottom:20px;
+}
+
+.goals-section ul{
+    list-style:none;
+}
+
+.goals-section li{
+    margin:10px 0;
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+    .container{
+        flex-direction:column;
+    }
+
+    .sidebar{
+        width:100%;
+    }
+}
+
+.light-mode{
+    background:#f1f5f9;
+    color:black;
+}
+
+.light-mode .sidebar{
+    background:#e2e8f0;
+}
+
+.light-mode .card{
+    background:white;
+}
+
+.timer-buttons button{
+    background:#38bdf8;
+    color:white;
+    transition:0.3s;
+}
+
+.timer-buttons button:hover{
+    transform:translateY(-3px);
+    opacity:0.9;
+}
+
+.light-mode .goals-section input{
+    background:white;
+    color:black;
+}
+
+.light-mode .goals-section input::placeholder{
+    color:black;
+}
