@@ -181,3 +181,62 @@ body{
 .light-mode .goals-section input::placeholder{
     color:black;
 }
+
+.goal-input-container{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    margin:25px 0;
+}
+
+#goal-input{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:12px;
+    font-size:16px;
+}
+
+#add-goal-btn{
+    width: 200px;
+    padding: 12px 20px;
+    border:none;
+    display: block;
+    margin: 20px auto;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+#add-goal-btn:hover{
+    transform:scale(1.03);
+}
+
+#goal-list{
+    list-style:none;
+}
+
+.goal-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    background:rgba(255,255,255,0.05);
+
+    padding:15px 20px;
+    border-radius:12px;
+
+    margin-bottom:15px;
+}
+
+.goal-item button{
+    background:#ef4444;
+    color:white;
+
+    border:none;
+    padding:8px 14px;
+    border-radius:8px;
+
+    cursor:pointer;
+}

@@ -72,3 +72,88 @@ resetBtn.addEventListener("click", () => {
 });
 
 updateTimer();
+
+// GOALS SYSTEM
+
+const goalInput = document.getElementById("goal-input");
+
+const addGoalBtn = document.getElementById("add-goal-btn");
+
+const goalList = document.getElementById("goal-list");
+
+
+// LOAD SAVED GOALS
+
+let goals = JSON.parse(localStorage.getItem("goals")) || [];
+
+
+// RENDER GOALS
+
+function renderGoals(){
+
+    goalList.innerHTML = "";
+
+    goals.forEach((goal, index) => {
+
+        const li = document.createElement("li");
+
+        li.classList.add("goal-item");
+
+        li.innerHTML = `
+            <span>${goal}</span>
+
+            <button onclick="deleteGoal(${index})">
+                Delete
+            </button>
+        `;
+
+        goalList.appendChild(li);
+
+    });
+
+}
+
+
+// ADD GOAL
+
+addGoalBtn.addEventListener("click", () => {
+
+    const goalText = goalInput.value.trim();
+
+    if(goalText === ""){
+        return;
+    }
+
+    goals.push(goalText);
+
+    localStorage.setItem(
+        "goals",
+        JSON.stringify(goals)
+    );
+
+    renderGoals();
+
+    goalInput.value = "";
+
+});
+
+
+// DELETE GOAL
+
+function deleteGoal(index){
+
+    goals.splice(index, 1);
+
+    localStorage.setItem(
+        "goals",
+        JSON.stringify(goals)
+    );
+
+    renderGoals();
+
+}
+
+
+// INITIAL RENDER
+
+renderGoals();
